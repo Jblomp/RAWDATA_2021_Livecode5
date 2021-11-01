@@ -95,4 +95,6 @@ namespace WebService.Controllers
             return _linkGenerator.GetUriByName(HttpContext, nameof(GetCategory), new { category.Id });
         }
     }
+
+   
 }

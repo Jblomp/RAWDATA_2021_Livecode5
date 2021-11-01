@@ -6,6 +6,8 @@ namespace DataServiceLib
 {
     public class DataService : IDataService
     {
+        
+        
         private readonly List<Category> _categories = new List<Category>
         {
             new Category{ Id = 1, Name = "Beverages", Description = "Soft drinks, coffees, teas, beers, and ales"},
@@ -32,7 +34,10 @@ namespace DataServiceLib
 
         public IList<Category> GetCategories()
         {
-            return _categories;
+            var ctx = new NorthwindContext();
+            var testList = ctx.Categories.ToList();
+            
+            return testList;
         }
 
         public Category GetCategory(int id)
@@ -73,7 +78,11 @@ namespace DataServiceLib
 
         public IList<Product> GetProducts()
         {
-            return _products;
+            
+            var ctx = new NorthwindContext();
+            var testList = ctx.Products.ToList();
+            
+            return testList;
         }
 
         public Product GetProduct(int id)
